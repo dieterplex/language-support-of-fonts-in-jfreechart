@@ -6,10 +6,11 @@ between fonts "Droid Sans Fallback" and "全字庫(TW-Kai, TW-Sung)".
 
 Usage:
 
-    $ mvn exec:java -Dexec.mainClass="net.dieter.ChartFontTest" -Dexec.args="arg0 arg1 arg2"
-
-or 
     $ mvn -Ptest test
 
+or 
+
+    $ mvn exec:java -Dexec.mainClass="net.dieter.ChartFontTest" -Dexec.args="arg0 arg1 arg2"
 
 
+*Note* only test in Linux!

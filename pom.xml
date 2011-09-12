@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.dieter.utils</groupId>
+    <artifactId>jfreechart-fonts-render-test</artifactId>
+    <version>0.1</version>
+
+    <name>JFreeChart Fonts render test</name>
+    <description>
+    </description>
+
+    <properties>
+        <jdk.version>1.5</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jfreecommon.version>1.0.15</jfreecommon.version>
+        <jfreechart.version>1.0.13</jfreechart.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>${jfreechart.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>${jfreecommon.version}</version>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>test</id>
+            <properties>
+                <maven.compiler.debug>false</maven.compiler.debug>
+            </properties>
+            <build>  
+                <plugins>  
+                    <plugin>  
+                        <groupId>org.codehaus.mojo</groupId>  
+                        <artifactId>exec-maven-plugin</artifactId>  
+                        <version>1.2</version>  
+                        <executions>  
+                            <execution>  
+                                <phase>test</phase>  
+                                <goals>  
+                                    <goal>java</goal>  
+                                </goals>  
+                                <configuration>  
+                                    <mainClass>net.dieter.utils.ChartFontTest</mainClass>  
+                                    <arguments>  
+                                        <argument>TW-Sung</argument>
+                                        <argument>TW-Kai</argument>
+                                        <argument>Droid Sans Fallback</argument>
+                                        <argument>WenQuanYi Micro Hei</argument>
+                                        <argument>WenQuanYi Micro Hei Mono</argument>
+                                    </arguments>  
+                                </configuration>  
+                            </execution>  
+                        </executions>  
+                    </plugin>  
+                </plugins>  
+            </build>  
+        </profile>
+    </profiles>
+</project>
